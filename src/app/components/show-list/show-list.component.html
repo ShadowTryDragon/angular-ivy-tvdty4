@@ -1,0 +1,60 @@
+<table class="table table-striped table hover">
+  <thead>
+    <tr>
+      <th> ID </th>
+      <th> Serientitel </th>
+      <th> &nbsp; </th>
+      <th> &nbsp; </th>
+    </tr>
+  </thead>
+
+  <tbody >
+  <ng-container *ngFor="let s of shows">
+    <tr *ngIf="!toEdit(s)">
+      <td>
+        {{s.id}}
+      </td>
+        <td>  
+        {{s.titel}}
+      </td>
+  <td>
+ {{s.kurzbeschreibung}}
+  
+  </td>
+
+
+      <td>
+        <button type="submit" (click)="edit(s)" class="material-icons">
+          edit
+        </button>
+      </td>
+      <td>
+        <button type="submit" (click)="delete(s)" class="material-icons">
+          delete
+        </button>
+          
+      </td>
+    </tr>
+
+    <tr *ngIf="toEdit(s)">
+      <td> {{s.id}}
+      <div class="mb-2"> 
+      <label class="form-label" for="newShowID"></label> 
+      <input class="form-control" id="newShowID" name="newShowID" type="number" placeholder="Hier die neue ID eingeben!">
+      </div>
+    </td>
+
+      <td> <input [(ngModel)] ="s.id">
+        <div>
+        <label class="form-label" for="newTitelId"></label>
+        <input class="form-control" id="newTitelId" name="newTitelId" type="text"
+        placeholder="Hier den neuen Titel eingeben">
+        </div>
+    </td>
+
+    <td colspan="2"> <button type="submit" class="btn btn-primary" (click)="saveEdit()"> save </button>
+    </td>
+    </tr>
+    </ng-container>
+  </tbody>
+</table>
