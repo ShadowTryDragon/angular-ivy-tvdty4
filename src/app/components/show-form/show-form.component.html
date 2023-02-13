@@ -9,7 +9,16 @@
   <input class="form-control" id="newTitelId" name="newTitelId" type="text"
   placeholder="Hier den Titel der Serie eingeben"[(ngModel)] = "show.titel">
   </div>
+  <div>
+<label class="form-label" for="newKurzID"></label>
+<input class="form-control" id="newKurzID" name="newKurzID" type="text" 
+placeholder="Optimal: Kurzbeschreibung einfügen"[(ngModel)] = "show.kurzbeschreibung">
+
+
+  </div>
   
+
+
   <div class="mb-2"> 
     <button type="submit" class="btn btn-primary" (click)="save()" >absenden</button>
   </div>

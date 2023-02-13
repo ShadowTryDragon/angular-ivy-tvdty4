@@ -3,6 +3,7 @@
     <tr>
       <th> ID </th>
       <th> Serientitel </th>
+      <th>Kurzbeschreibung</th>
       <th> &nbsp; </th>
       <th> &nbsp; </th>
     </tr>
@@ -50,6 +51,14 @@
         <input class="form-control" id="newTitelId" name="newTitelId" type="text"
         placeholder="Hier den neuen Titel eingeben">
         </div>
+    </td>
+    <td>
+   <div>
+<label class="form-label" for="newKurzID"> </label>
+<input class="form-control" id="newKurzID" name="newKurzID" type="text"
+placeholder="Optinal: Kurzbeschreibung Einfügen">
+
+   </div>
     </td>
 
     <td colspan="2"> <button type="submit" class="btn btn-primary" (click)="saveEdit()"> save </button>
